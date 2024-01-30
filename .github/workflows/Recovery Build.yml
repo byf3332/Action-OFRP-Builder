@@ -50,8 +50,6 @@ jobs:
       contents: write
     steps:
 
-    # Set python ver to 2.7
-    - name: Set up Python 2.7
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
       with:
