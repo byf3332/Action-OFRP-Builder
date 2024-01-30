@@ -6,23 +6,23 @@ on:
       SYNC_URL:
         description: 'SYNC_URL'
         required: true
-        default: 'https://gitlab.com/OrangeFox/sync.git'
+        default: 'https://github.com/byf3332/sync.git'
       MANIFEST_BRANCH:
         description: 'MANIFEST_BRANCH'
         required: true
-        default: '11.0'
+        default: '9.0'
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        default: 'https://github.com/OrangeFoxRecovery/device_xiaomi_garden'
+        default: 'https://github.com/byf3332/Xiaomi-Archimedes-device-tree'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
-        default: 'fox_11.0_Q'
+        default: 'fox_9.0'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
-        default: 'device/xiaomi/garden'
+        default: 'device/xiaomi/midrai4g'
       COMMON_TREE_URL:
         description: 'COMMON_TREE_URL (if no common tree, leave blank)'
         required: false
@@ -32,11 +32,11 @@ on:
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
-        default: 'garden'
+        default: 'midrai4g'
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME'
         required: true
-        default: 'twrp_garden'
+        default: 'twrp_midrai4g'
       BUILD_TARGET:
         description: 'BUILD_TARGET'
         required: true
@@ -80,6 +80,7 @@ jobs:
         cd ${{ steps.pwd.outputs.workspace-folder }}
         git clone ${{ github.event.inputs.SYNC_URL }}
         cd sync
+        chmod 777 orangefox_sync.sh
         ./orangefox_sync.sh --branch ${{ github.event.inputs.MANIFEST_BRANCH }} --path ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
