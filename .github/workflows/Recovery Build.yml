@@ -51,11 +51,14 @@ jobs:
     steps:
 
     # Set python ver to 2.7
-    - name: Set up Python 2
-      uses: actions/setup-python@v2
-      with:
-        python-version: 2.7 # 设置要使用的 Python 2.x 版本
- 
+    - name: Set up Python 2.7
+      run: |
+        sudo apt-get update
+        sudo apt-get install python2.7
+        sudo update-alternatives --set python /usr/bin/python2.7
+        python --version
+
+    
     # You might want to Checkout your repo first, but not mandatory
     - name: Check Out
       uses: actions/checkout@v3
