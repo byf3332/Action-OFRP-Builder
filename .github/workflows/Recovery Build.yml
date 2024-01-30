@@ -52,10 +52,11 @@ jobs:
 
     # Set python ver to 2.7
     - name: Set up Python 2.7
-      run: |
-        sudo mv /usr/bin/python /usr/bin/python_backup
-        sudo ln -s /bin/python2.7 /usr/bin/python
-        python --version
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '2.7'
+    - run: python --version
 
     
     # You might want to Checkout your repo first, but not mandatory
