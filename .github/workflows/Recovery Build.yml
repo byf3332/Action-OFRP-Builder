@@ -50,14 +50,12 @@ jobs:
       contents: write
     steps:
 
-
     # Set python ver to 2.7
-
-    -uses: actions/setup-python@v5
-      with: 
-        python-version: '2.7'
-    -run: python --version
-    
+    - name: Set up Python 2.7
+      run: |
+        sudo mv /usr/bin/python /usr/bin/python_backup
+        sudo ln -s /bin/python2.7 /usr/bin/python
+        python --version
 
     
     # You might want to Checkout your repo first, but not mandatory
