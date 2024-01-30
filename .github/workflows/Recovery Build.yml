@@ -55,7 +55,6 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install python2.7
-        sudo update-alternatives --set python /usr/bin/python2.7
         python --version
 
     
