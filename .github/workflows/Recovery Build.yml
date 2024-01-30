@@ -49,6 +49,12 @@ jobs:
     permissions:
       contents: write
     steps:
+
+    # Set python ver to 2.7
+    - name: Set up Python 2
+      uses: actions/setup-python@v2
+      with:
+        python-version: 2.7 # 设置要使用的 Python 2.x 版本
  
     # You might want to Checkout your repo first, but not mandatory
     - name: Check Out
