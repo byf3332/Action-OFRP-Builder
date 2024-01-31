@@ -50,12 +50,6 @@ jobs:
       contents: write
     steps:
 
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '2.7'
-    - run: python --version
-
     
     # You might want to Checkout your repo first, but not mandatory
     - name: Check Out
@@ -110,6 +104,9 @@ jobs:
       uses: pierotofy/set-swap-space@master
       with:
         swap-size-gb: 12
+        
+    - name: install py-is-py2
+      run: sudo apt-get install python-is-python2
 
     - name: Building recovery
       run: |
