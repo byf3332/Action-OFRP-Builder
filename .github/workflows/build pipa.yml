@@ -14,7 +14,7 @@ on:
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        default: 'https://github.com/byf3332/Xiaomi-pipa-device-tree'
+        default: 'https://github.com/byf3332/device_tree_pipa'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
@@ -36,7 +36,7 @@ on:
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME'
         required: true
-        default: 'omni_pipa'
+        default: 'lineage_pipa'
       BUILD_TARGET:
         description: 'BUILD_TARGET'
         required: true
